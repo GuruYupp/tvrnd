@@ -6,7 +6,7 @@ console.log('SCSS with Webpack is working!');
 
 const delay = ()=>new Promise((resolve,reject)=>{
     setTimeout(()=>{
-        resolve("resolved")
+        resolve("Hosting By Netlify")
     },3000)
 })
 
@@ -17,7 +17,7 @@ const sum = async ()=>{
 const  display = async ()=>{
     let x = await sum()
     console.log(x)
-    $('h1').html( "WelCome Guru .." + x) 
+    $('h1').html( "WelCome Guru ..") 
 }
 
 display()
