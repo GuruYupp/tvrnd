@@ -17,7 +17,7 @@ const sum = async ()=>{
 const  display = async ()=>{
     let x = await sum()
     console.log(x)
-    $('h1').html( "WelCome Guru ..") 
+    $('h1').html( "WelCome Guru .." + x) 
 }
 
 display()
