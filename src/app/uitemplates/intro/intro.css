@@ -1,0 +1,25 @@
+
+.IntroContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:20px;
+}
+
+.IntroContainer .title{
+    color:rgba(0, 47, 255, 0.747);
+}
+
+.IntroContainer .btn{
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgba(166, 255, 0, 0.747);
+    font-size: 20px;
+}

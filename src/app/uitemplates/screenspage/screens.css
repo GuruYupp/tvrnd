@@ -1,0 +1,27 @@
+.screensPage{
+    height: 100%;
+    width:100%;
+}
+
+.screensPage .screensContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap:20px;
+    width: 100%;
+}
+
+.screensPage .screensContainer .screen{
+    height: 100px;
+    width: 200px;
+    border-radius: 5px;
+    line-height: 100px;
+    text-align: center;
+    border: 2px solid transparent;
+    background-color: rgba(128, 255, 0, 0.74);
+}
+
+.screen.imageFocus {
+    border-color: blueviolet !important;
+}
