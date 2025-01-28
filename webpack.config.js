@@ -18,7 +18,7 @@ module.exports = (env, argv) => {
       filename: isProduction ? "bundle.[contenthash].js" : "bundle.js",
       path: path.resolve(__dirname, "dist"),
       clean: true,
-      publicPath:'/',
+      publicPath: "/",
       environment: {
         arrowFunction: false,
         destructuring: false,
@@ -30,7 +30,7 @@ module.exports = (env, argv) => {
     },
     devServer: {
       static: {
-        directory: path.join(__dirname, 'dist'),
+        directory: path.join(__dirname, "dist"),
       },
       port: 3000,
       client: {
@@ -41,8 +41,8 @@ module.exports = (env, argv) => {
           runtimeErrors: true,
         },
       },
-      compress:true,
-      open:false
+      compress: true,
+      open: false,
     },
     module: {
       rules: [
@@ -74,7 +74,7 @@ module.exports = (env, argv) => {
             {
               loader: "css-loader",
               options: {
-                modules:false,
+                modules: false,
                 // modules: {
                 //   mode: "local",
                 //   auto: true,
@@ -90,9 +90,9 @@ module.exports = (env, argv) => {
         {
           test: /\.(png|jpg|jpeg|gif|svg)$/i,
           type: "asset/resource", // Handle images as assets
-      generator: {
-        filename: 'assets/images/[name][ext][query]', // Path in the output
-      },
+          generator: {
+            filename: "assets/images/[name][ext][query]", // Path in the output
+          },
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -114,7 +114,7 @@ module.exports = (env, argv) => {
           },
           extractComments: isProduction ? false : true, // Prevent license comments from being extracted into separate files
         }),
-        new CssMinimizerPlugin()
+        new CssMinimizerPlugin(),
       ],
     },
     plugins: [
