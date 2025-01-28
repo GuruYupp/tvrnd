@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
@@ -73,11 +74,12 @@ module.exports = (env, argv) => {
             {
               loader: "css-loader",
               options: {
-                modules: {
-                  mode: "local",
-                  auto: true,
-                  localIdentName: "testapp__[local]--[hash:base64:5]",
-                },
+                modules:false,
+                // modules: {
+                //   mode: "local",
+                //   auto: true,
+                //   localIdentName: "testapp__[local]--[hash:base64:5]",
+                // },
                 sourceMap: true,
                 url: true,
               },
@@ -112,6 +114,7 @@ module.exports = (env, argv) => {
           },
           extractComments: isProduction ? false : true, // Prevent license comments from being extracted into separate files
         }),
+        new CssMinimizerPlugin()
       ],
     },
     plugins: [
